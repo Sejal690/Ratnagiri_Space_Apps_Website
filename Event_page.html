@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratnagiri Space Apps Challenge</title>
+    <!-- Use a custom font and Tailwind CSS for styling -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom vibrant gradient for a space-themed hero section */
+        .hero-bg {
+            background-image: linear-gradient(120deg, #1f2937 0%, #3a0647 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1-px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+        }
+        /* Style for multi-page sections, only show the active one */
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+        }
+        /* New space background for the Learn More page using only a color gradient */
+        .learn-more-bg {
+            background-image: linear-gradient(180deg, #1f2937 0%, #0c0a0c 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Header/Hero Section -->
+    <header class="hero-bg py-6 md:py-8 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+            <a href="#" onclick="showPage('home')" class="text-2xl font-bold text-white mb-4 sm:mb-0">
+                Ratnagiri Space Apps
+            </a>
+            <nav class="flex space-x-4 sm:space-x-6">
+                <a href="#" onclick="showPage('learn-more')" class="text-white hover:text-purple-400 font-bold transition duration-300">
+                    Learn More
+                </a>
+                <a href="#" onclick="showPage('register')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    Register Now
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 md:py-24">
+
+        <!-- Home Page Section -->
+        <section id="home" class="page-section active text-center">
+             <div class="hero-bg py-16 md:py-24 rounded-lg">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+                    Ratnagiri Space Apps Challenge
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 font-light mb-8 max-w-2xl mx-auto">
+                    Ratnagiri's Future: Innovating with Space, Science & Technology
+                </p>
+            </div>
+        </section>
+
+        <!-- Learn More Page Section -->
+        <section id="learn-more" class="page-section learn-more-bg">
+            <!-- About the Event Section -->
+            <div id="about" class="mb-16 md:mb-24">
+                <h2 class="text-3xl font-bold text-center mb-8 text-purple-400">About the Event</h2>
+                <div class="bg-gray-800 p-6 md:p-10 rounded-lg card-shadow">
+                    <p class="text-lg leading-relaxed text-white">
+                        Welcome to the **Ratnagiri Space Apps Challenge**, a local hackathon designed to inspire high school and college students to innovate using real-world space data. Under the theme of "Ratnagiri's Future: Innovating with Space, Science & Technology," participants will form teams to tackle challenges related to their community, such as smart farming, urban planning, environmental preservation, and coastal monitoring. The event's goal is to foster a new generation of problem-solvers by encouraging collaboration, creativity, and critical thinking. Participants will have the opportunity to use free and open data from NASA and other space agency partners to develop project solutions, with the top projects being nominated for judging at the global level.
+                    </p>
+                    <div class="mt-6 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                        <div class="text-center sm:text-left">
+                            <span class="block text-gray-400">Event Dates:</span>
+                            <span class="block text-xl font-bold text-white">October 4-5, 2025</span>
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <span class="block text-gray-400">Target Audience:</span>
+                            <span class="block text-xl font-bold text-white">High school & Bachelor's students</span>
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <span class="block text-gray-400">Location:</span>
+                            <span class="block text-xl font-bold text-white">Ratnagiri, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenges Section -->
+            <div id="challenges" class="mb-16 md:mb-24">
+                <h2 class="text-3xl font-bold text-center mb-8 text-purple-400">Challenges</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Smart Farming Card -->
+                    <div class="bg-gray-800 p-6 rounded-lg card-shadow">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-2">Smart Farming for Ratnagiri's Farms</h3>
+                        <p class="text-white">
+                            This challenge asks participants to develop a solution using NASA satellite data and other open-source resources to address key agricultural issues in the Ratnagiri region. Solutions could include mobile apps, data dashboards, or predictive models that provide farmers with actionable insights on weather patterns, soil health, and crop stress to improve yields and sustainability.
+                        </p>
+                    </div>
+                    <!-- Urban Planning Card -->
+                    <div class="bg-gray-800 p-6 rounded-lg card-shadow">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-2">Urban Planning for Sustainable Growth</h3>
+                        <p class="text-white">
+                            Participants will leverage NASA Earth observation data (like imagery from Landsat or MODIS) to analyze and visualize urban expansion in Ratnagiri. The goal is to create a tool or a plan that helps city planners manage sustainable growth, monitor changes in land use, identify potential for "urban heat islands," or plan for future infrastructure development.
+                        </p>
+                    </div>
+                    <!-- Natural Heritage Card -->
+                    <div class="bg-gray-800 p-6 rounded-lg card-shadow">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-2">Preservation of Ratnagiri's Natural Heritage</h3>
+                        <p class="text-white">
+                            This challenge focuses on using NASA and other geospatial data to monitor and protect the region's rich biodiversity and historical sites. Teams could develop a project to track deforestation, assess the health of local ecosystems, or monitor changes to historical monuments caused by environmental factors.
+                        </p>
+                    </div>
+                    <!-- Coast Monitoring Card -->
+                    <div class="bg-gray-800 p-6 rounded-lg card-shadow">
+                        <h3 class="text-2xl font-bold text-purple-400 mb-2">Ratnagiri Coast Monitoring</h3>
+                        <p class="text-white">
+                            Participants will use satellite data to address challenges specific to the coastal region. This could involve creating a project to monitor coastal erosion, track changes in mangrove forests, analyze marine pollution, or develop an early warning system for storm surges and other coastal hazards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workshops Section -->
+            <div id="workshops" class="mb-16 md:mb-24">
+                <h2 class="text-3xl font-bold text-center mb-8 text-purple-400">Workshops</h2>
+                <div class="bg-gray-800 p-6 md:p-10 rounded-lg card-shadow">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-purple-400">Exploring Our Planet: Storytelling with NASA Data</h3>
+                        <p class="text-white mt-2">
+                            This workshop will empower participants to become storytellers using real-world data from NASA. We will guide students on a journey to explore our planet through the eyes of NASA's satellites, learning how to access and interpret a variety of open data, from Earth imagery and climate trends to topographical maps. The focus will be on transforming complex information into compelling narratives, presentations, and visual projects. Participants will learn how to build a clear, impactful story around a scientific observation, a crucial skill for communicating project ideas effectively during the hackathon.
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-purple-400">Getting Started with NASA Open Data APIs</h3>
+                        <p class="text-white mt-2">
+                            An introductory session on how to access and use NASA's vast collection of open data, including satellite imagery, planetary data, and astronomical observations, using developer APIs.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-purple-400">Space Apps Ideation & Project Planning</h3>
+                        <p class="text-white mt-2">
+                            This workshop will guide teams through the process of brainstorming a unique project idea, defining a problem statement, and creating a feasible project plan within the hackathon's 48-hour timeline.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Page Section -->
+        <section id="register" class="page-section">
+            <h2 class="text-3xl font-bold text-center mb-8 text-purple-400">Register Now</h2>
+            <div class="bg-gray-800 p-6 md:p-10 rounded-lg card-shadow max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="teamName" class="block text-sm font-medium text-white">Team Name</label>
+                        <input type="text" id="teamName" name="teamName" class="mt-1 block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div>
+                        <label for="teamMembers" class="block text-sm font-medium text-white">Team Members (Full Name of each member)</label>
+                        <textarea id="teamMembers" name="teamMembers" rows="4" class="mt-1 block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g. John Doe, Jane Smith, etc." required></textarea>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-white">Primary Team Contact Email Address</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                    </div>
+                    <div>
+                        <label for="challenge" class="block text-sm font-medium text-white">Select a Challenge to Participate in</label>
+                        <select id="challenge" name="challenge" class="mt-1 block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            <option value="">-- Please select a challenge --</option>
+                            <option value="smart-farming">Smart Farming for Ratnagiri's Farms</option>
+                            <option value="urban-planning">Urban Planning for Sustainable Growth</option>
+                            <option value="natural-heritage">Preservation of Ratnagiri's Natural Heritage</option>
+                            <option value="coast-monitoring">Ratnagiri Coast Monitoring</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-600 rounded">
+                        <label for="terms" class="ml-2 block text-sm text-white">
+                            I agree to the terms and conditions.
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300">
+                            Submit Registration
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-950 text-gray-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Ratnagiri Space Apps Challenge. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // JavaScript to handle page switching
+        function showPage(pageId) {
+            // Hide all page sections
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show the selected page section
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
